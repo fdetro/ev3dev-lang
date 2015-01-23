@@ -442,14 +442,14 @@ sensor::sensor(port_type port)
 sensor::sensor(port_type port, const std::set<sensor_type> &types)
 {
   connect({{ "port_name", { port }},
-           { "name",        types }});
+           { "driver_name", types }});
 }
 
 //-----------------------------------------------------------------------------
 
 bool sensor::connect(const std::map<std::string, std::set<std::string>> &match) noexcept
 {
-  static const std::string _strClassDir { SYS_ROOT "/class/msensor/" };
+  static const std::string _strClassDir { SYS_ROOT "/class/lego-sensor/" };
   static const std::string _strPattern  { "sensor" };
   
   try
@@ -542,13 +542,13 @@ void sensor::init_members(bool bAll)
   if (bAll)
   {
     _port_name = get_attr_string("port_name");
-    _type = get_attr_string("name");
+    _type = get_attr_string("driver_name");
   }
 
   _mode    = get_attr_string("mode");
   _modes   = get_attr_set("modes");
   _nvalues = get_attr_int("num_values");
-  _dp      = get_attr_int("dp");
+  _dp      = get_attr_int("decimals");
   
   _dp_scale = 1.f;
   for (unsigned dp = _dp; dp; --dp)
@@ -579,9 +579,9 @@ i2c_sensor::i2c_sensor(port_type port_) :
 
 i2c_sensor::i2c_sensor(port_type port_, address_type address_)
 {
-  connect({{ "port_name", { port_ }},
-           { "name",      { nxt_i2c_sensor }},
-           { "address",   { address_ }}});
+  connect({{ "port_name",   { port_ }},
+           { "driver_name", { nxt_i2c_sensor }},
+           { "address",     { address_ }}});
 }
 
 //-----------------------------------------------------------------------------
