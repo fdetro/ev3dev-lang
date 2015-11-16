@@ -1228,8 +1228,8 @@
                     { "name" : "Blue Two", "systemName": "brickpi2:blue:ev3dev" }
                 ],
                 "groups" : [
-                    { "name" : "Blue One", "entries" : ["Blue One"] },
-                    { "name" : "Blue Two", "entries" : ["Blue Two"] }
+                    { "name" : "One", "entries" : ["Blue One"] },
+                    { "name" : "Two", "entries" : ["Blue Two"] }
                 ],
                 "colors": [
                     { "name" : "Blue", "value" : [ 1.0 ] }
