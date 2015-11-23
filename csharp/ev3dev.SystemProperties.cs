@@ -88,11 +88,11 @@ namespace ev3dev
         /// to convert rotations or degrees to tacho counts. In the case of linear
         /// actuators, the units here will be counts per centimeter.
         /// </summary>
-        public string CountPerRot 
+        public int CountPerRot 
         { 
             get 
             {
-                return GetAttrFromSet("count_per_rot");
+                return GetAttrInt("count_per_rot");
             } 
         } 
       
@@ -103,7 +103,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("driver_name");
+                return GetAttrString("driver_name");
             } 
         } 
       
@@ -111,11 +111,11 @@ namespace ev3dev
         /// Returns the current duty cycle of the motor. Units are percent. Values
         /// are -100 to 100.
         /// </summary>
-        public string DutyCycle 
+        public int DutyCycle 
         { 
             get 
             {
-                return GetAttrFromSet("duty_cycle");
+                return GetAttrInt("duty_cycle");
             } 
         } 
       
@@ -125,15 +125,15 @@ namespace ev3dev
         /// the motor to rotate in reverse. This value is only used when `speed_regulation`
         /// is off.
         /// </summary>
-        public string DutyCycleSp 
+        public int DutyCycleSp 
         { 
             get 
             {
-                return GetAttrFromSet("duty_cycle_sp");
+                return GetAttrInt("duty_cycle_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -148,7 +148,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("encoder_polarity");
+                return GetAttrString("encoder_polarity");
             } 
             set 
             {
@@ -166,7 +166,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("polarity");
+                return GetAttrString("polarity");
             } 
             set 
             {
@@ -181,7 +181,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("port_name");
+                return GetAttrString("port_name");
             } 
         } 
       
@@ -191,60 +191,60 @@ namespace ev3dev
         /// Likewise, rotating counter-clockwise causes the position to decrease.
         /// Writing will set the position to that value.
         /// </summary>
-        public string Position 
+        public int Position 
         { 
             get 
             {
-                return GetAttrFromSet("position");
+                return GetAttrInt("position");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
         /// <summary> 
         /// The proportional constant for the position PID.
         /// </summary>
-        public string PositionP 
+        public int PositionP 
         { 
             get 
             {
-                return GetAttrFromSet("hold_pid/Kp");
+                return GetAttrInt("hold_pid/Kp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
         /// <summary> 
         /// The integral constant for the position PID.
         /// </summary>
-        public string PositionI 
+        public int PositionI 
         { 
             get 
             {
-                return GetAttrFromSet("hold_pid/Ki");
+                return GetAttrInt("hold_pid/Ki");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
         /// <summary> 
         /// The derivative constant for the position PID.
         /// </summary>
-        public string PositionD 
+        public int PositionD 
         { 
             get 
             {
-                return GetAttrFromSet("hold_pid/Kd");
+                return GetAttrInt("hold_pid/Kd");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -254,15 +254,15 @@ namespace ev3dev
         /// can use the value returned by `counts_per_rot` to convert tacho counts to/from
         /// rotations or degrees.
         /// </summary>
-        public string PositionSp 
+        public int PositionSp 
         { 
             get 
             {
-                return GetAttrFromSet("position_sp");
+                return GetAttrInt("position_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -271,11 +271,11 @@ namespace ev3dev
         /// not necessarily degrees (although it is for LEGO motors). Use the `count_per_rot`
         /// attribute to convert this value to RPM or deg/sec.
         /// </summary>
-        public string Speed 
+        public int Speed 
         { 
             get 
             {
-                return GetAttrFromSet("speed");
+                return GetAttrInt("speed");
             } 
         } 
       
@@ -284,15 +284,15 @@ namespace ev3dev
         /// is on. Reading returns the current value.  Use the `count_per_rot` attribute
         /// to convert RPM or deg/sec to tacho counts per second.
         /// </summary>
-        public string SpeedSp 
+        public int SpeedSp 
         { 
             get 
             {
-                return GetAttrFromSet("speed_sp");
+                return GetAttrInt("speed_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -303,15 +303,15 @@ namespace ev3dev
         /// when starting the motor. If the maximum duty cycle is limited by `duty_cycle_sp`
         /// or speed regulation, the actual ramp time duration will be less than the setpoint.
         /// </summary>
-        public string RampUpSp 
+        public int RampUpSp 
         { 
             get 
             {
-                return GetAttrFromSet("ramp_up_sp");
+                return GetAttrInt("ramp_up_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -322,15 +322,15 @@ namespace ev3dev
         /// when stopping the motor. If the starting duty cycle is less than 100%, the
         /// ramp time duration will be less than the full span of the setpoint.
         /// </summary>
-        public string RampDownSp 
+        public int RampDownSp 
         { 
             get 
             {
-                return GetAttrFromSet("ramp_down_sp");
+                return GetAttrInt("ramp_down_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -345,7 +345,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("speed_regulation");
+                return GetAttrString("speed_regulation");
             } 
             set 
             {
@@ -356,45 +356,45 @@ namespace ev3dev
         /// <summary> 
         /// The proportional constant for the speed regulation PID.
         /// </summary>
-        public string SpeedRegulationP 
+        public int SpeedRegulationP 
         { 
             get 
             {
-                return GetAttrFromSet("speed_pid/Kp");
+                return GetAttrInt("speed_pid/Kp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
         /// <summary> 
         /// The integral constant for the speed regulation PID.
         /// </summary>
-        public string SpeedRegulationI 
+        public int SpeedRegulationI 
         { 
             get 
             {
-                return GetAttrFromSet("speed_pid/Ki");
+                return GetAttrInt("speed_pid/Ki");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
         /// <summary> 
         /// The derivative constant for the speed regulation PID.
         /// </summary>
-        public string SpeedRegulationD 
+        public int SpeedRegulationD 
         { 
             get 
             {
-                return GetAttrFromSet("speed_pid/Kd");
+                return GetAttrInt("speed_pid/Kd");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -420,7 +420,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("stop_command");
+                return GetAttrString("stop_command");
             } 
             set 
             {
@@ -453,15 +453,15 @@ namespace ev3dev
         /// `run-timed` command. Reading returns the current value. Units are in
         /// milliseconds.
         /// </summary>
-        public string TimeSp 
+        public int TimeSp 
         { 
             get 
             {
-                return GetAttrFromSet("time_sp");
+                return GetAttrInt("time_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -521,7 +521,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("driver_name");
+                return GetAttrString("driver_name");
             } 
         } 
       
@@ -529,11 +529,11 @@ namespace ev3dev
         /// Shows the current duty cycle of the PWM signal sent to the motor. Values
         /// are -100 to 100 (-100% to 100%).
         /// </summary>
-        public string DutyCycle 
+        public int DutyCycle 
         { 
             get 
             {
-                return GetAttrFromSet("duty_cycle");
+                return GetAttrInt("duty_cycle");
             } 
         } 
       
@@ -542,15 +542,15 @@ namespace ev3dev
         /// Valid values are -100 to 100 (-100% to 100%). Reading returns the current
         /// setpoint.
         /// </summary>
-        public string DutyCycleSp 
+        public int DutyCycleSp 
         { 
             get 
             {
-                return GetAttrFromSet("duty_cycle_sp");
+                return GetAttrInt("duty_cycle_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -561,7 +561,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("polarity");
+                return GetAttrString("polarity");
             } 
             set 
             {
@@ -576,7 +576,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("port_name");
+                return GetAttrString("port_name");
             } 
         } 
       
@@ -584,15 +584,15 @@ namespace ev3dev
         /// Sets the time in milliseconds that it take the motor to ramp down from 100%
         /// to 0%. Valid values are 0 to 10000 (10 seconds). Default is 0.
         /// </summary>
-        public string RampDownSp 
+        public int RampDownSp 
         { 
             get 
             {
-                return GetAttrFromSet("ramp_down_sp");
+                return GetAttrInt("ramp_down_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -600,15 +600,15 @@ namespace ev3dev
         /// Sets the time in milliseconds that it take the motor to up ramp from 0% to
         /// 100%. Valid values are 0 to 10000 (10 seconds). Default is 0.
         /// </summary>
-        public string RampUpSp 
+        public int RampUpSp 
         { 
             get 
             {
-                return GetAttrFromSet("ramp_up_sp");
+                return GetAttrInt("ramp_up_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -655,15 +655,15 @@ namespace ev3dev
         /// `run-timed` command. Reading returns the current value. Units are in
         /// milliseconds.
         /// </summary>
-        public string TimeSp 
+        public int TimeSp 
         { 
             get 
             {
-                return GetAttrFromSet("time_sp");
+                return GetAttrInt("time_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -696,7 +696,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("driver_name");
+                return GetAttrString("driver_name");
             } 
         } 
       
@@ -706,15 +706,15 @@ namespace ev3dev
         /// Valid values are 2300 to 2700. You must write to the position_sp attribute for
         /// changes to this attribute to take effect.
         /// </summary>
-        public string MaxPulseSp 
+        public int MaxPulseSp 
         { 
             get 
             {
-                return GetAttrFromSet("max_pulse_sp");
+                return GetAttrInt("max_pulse_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -726,15 +726,15 @@ namespace ev3dev
         /// where the motor does not turn. You must write to the position_sp attribute for
         /// changes to this attribute to take effect.
         /// </summary>
-        public string MidPulseSp 
+        public int MidPulseSp 
         { 
             get 
             {
-                return GetAttrFromSet("mid_pulse_sp");
+                return GetAttrInt("mid_pulse_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -744,15 +744,15 @@ namespace ev3dev
         /// is 600. Valid values are 300 to 700. You must write to the position_sp
         /// attribute for changes to this attribute to take effect.
         /// </summary>
-        public string MinPulseSp 
+        public int MinPulseSp 
         { 
             get 
             {
-                return GetAttrFromSet("min_pulse_sp");
+                return GetAttrInt("min_pulse_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -766,7 +766,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("polarity");
+                return GetAttrString("polarity");
             } 
             set 
             {
@@ -781,7 +781,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("port_name");
+                return GetAttrString("port_name");
             } 
         } 
       
@@ -791,15 +791,15 @@ namespace ev3dev
         /// are -100 to 100 (-100% to 100%) where `-100` corresponds to `min_pulse_sp`,
         /// `0` corresponds to `mid_pulse_sp` and `100` corresponds to `max_pulse_sp`.
         /// </summary>
-        public string PositionSp 
+        public int PositionSp 
         { 
             get 
             {
-                return GetAttrFromSet("position_sp");
+                return GetAttrInt("position_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -811,15 +811,15 @@ namespace ev3dev
         /// case reading and writing will fail with `-EOPNOTSUPP`. In continuous rotation
         /// servos, this value will affect the rate_sp at which the speed ramps up or down.
         /// </summary>
-        public string RateSp 
+        public int RateSp 
         { 
             get 
             {
-                return GetAttrFromSet("rate_sp");
+                return GetAttrInt("rate_sp");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -848,26 +848,26 @@ namespace ev3dev
         /// <summary> 
         /// Returns the maximum allowable brightness value.
         /// </summary>
-        public string MaxBrightness 
+        public int MaxBrightness 
         { 
             get 
             {
-                return GetAttrFromSet("max_brightness");
+                return GetAttrInt("max_brightness");
             } 
         } 
       
         /// <summary> 
         /// Sets the brightness level. Possible values are from 0 to `max_brightness`.
         /// </summary>
-        public string Brightness 
+        public int Brightness 
         { 
             get 
             {
-                return GetAttrFromSet("brightness");
+                return GetAttrInt("brightness");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -915,15 +915,15 @@ namespace ev3dev
         /// 0 and the current brightness setting. The `on` time can
         /// be specified via `delay_on` attribute in milliseconds.
         /// </summary>
-        public string DelayOn 
+        public int DelayOn 
         { 
             get 
             {
-                return GetAttrFromSet("delay_on");
+                return GetAttrInt("delay_on");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -932,15 +932,15 @@ namespace ev3dev
         /// 0 and the current brightness setting. The `off` time can
         /// be specified via `delay_off` attribute in milliseconds.
         /// </summary>
-        public string DelayOff 
+        public int DelayOff 
         { 
             get 
             {
-                return GetAttrFromSet("delay_off");
+                return GetAttrInt("delay_off");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -1001,11 +1001,11 @@ namespace ev3dev
         /// Returns the number of decimal places for the values in the `value<N>`
         /// attributes of the current mode.
         /// </summary>
-        public string Decimals 
+        public int Decimals 
         { 
             get 
             {
-                return GetAttrFromSet("decimals");
+                return GetAttrInt("decimals");
             } 
         } 
       
@@ -1017,7 +1017,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("driver_name");
+                return GetAttrString("driver_name");
             } 
         } 
       
@@ -1029,7 +1029,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("mode");
+                return GetAttrString("mode");
             } 
             set 
             {
@@ -1052,11 +1052,11 @@ namespace ev3dev
         /// Returns the number of `value<N>` attributes that will return a valid value
         /// for the current mode.
         /// </summary>
-        public string NumValues 
+        public int NumValues 
         { 
             get 
             {
-                return GetAttrFromSet("num_values");
+                return GetAttrInt("num_values");
             } 
         } 
       
@@ -1068,7 +1068,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("port_name");
+                return GetAttrString("port_name");
             } 
         } 
       
@@ -1080,7 +1080,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("units");
+                return GetAttrString("units");
             } 
         } 
       
@@ -1099,7 +1099,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("fw_version");
+                return GetAttrString("fw_version");
             } 
         } 
       
@@ -1109,15 +1109,15 @@ namespace ev3dev
         /// coded as 50 msec. Returns -EOPNOTSUPP if changing polling is not supported.
         /// Currently only I2C/NXT sensors support changing the polling period.
         /// </summary>
-        public string PollMs 
+        public int PollMs 
         { 
             get 
             {
-                return GetAttrFromSet("poll_ms");
+                return GetAttrInt("poll_ms");
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrInt("command", value);
             } 
         } 
       
@@ -1181,42 +1181,42 @@ namespace ev3dev
         /// <summary> 
         /// The measured current that the battery is supplying (in microamps)
         /// </summary>
-        public string MeasuredCurrent 
+        public int MeasuredCurrent 
         { 
             get 
             {
-                return GetAttrFromSet("current_now");
+                return GetAttrInt("current_now");
             } 
         } 
       
         /// <summary> 
         /// The measured voltage that the battery is supplying (in microvolts)
         /// </summary>
-        public string MeasuredVoltage 
+        public int MeasuredVoltage 
         { 
             get 
             {
-                return GetAttrFromSet("voltage_now");
+                return GetAttrInt("voltage_now");
             } 
         } 
       
         /// <summary> 
         /// </summary>
-        public string MaxVoltage 
+        public int MaxVoltage 
         { 
             get 
             {
-                return GetAttrFromSet("voltage_max_design");
+                return GetAttrInt("voltage_max_design");
             } 
         } 
       
         /// <summary> 
         /// </summary>
-        public string MinVoltage 
+        public int MinVoltage 
         { 
             get 
             {
-                return GetAttrFromSet("voltage_min_design");
+                return GetAttrInt("voltage_min_design");
             } 
         } 
       
@@ -1226,7 +1226,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("technology");
+                return GetAttrString("technology");
             } 
         } 
       
@@ -1236,7 +1236,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("type");
+                return GetAttrString("type");
             } 
         } 
       
@@ -1279,7 +1279,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("driver_name");
+                return GetAttrString("driver_name");
             } 
         } 
       
@@ -1304,7 +1304,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("mode");
+                return GetAttrString("mode");
             } 
             set 
             {
@@ -1320,7 +1320,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("port_name");
+                return GetAttrString("port_name");
             } 
         } 
       
@@ -1349,7 +1349,7 @@ namespace ev3dev
         { 
             get 
             {
-                return GetAttrFromSet("status");
+                return GetAttrString("status");
             } 
         } 
       

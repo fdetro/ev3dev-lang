@@ -1,14 +1,7 @@
 {% for item in classes %}{%
     assign currentClass =  item[1]; %}{%
-    assign className = currentClass.friendlyName | camel_case | capitalize %}
-    /// <summary>{% for line in currentClass.description %} 
-    /// {{ line }}{%
-    endfor %}
-    /// </summary>
-    public partial class {{className}}
-    { {% for driver in currentClass.driverName %}
-        public const string Driver{{driver | camel_case | capitalize}} = "{{driver}}"; {%
-      endfor %} 
-    } 
-    {%
+    assign className = currentClass.friendlyName | camel_case | capitalize %}{%
+    for driver in currentClass.driverName %}
+        public const string {{driver | camel_case | capitalize}} = "{{driver}}"; {%
+      endfor %}{%
 endfor %}

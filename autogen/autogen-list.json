@@ -10,7 +10,7 @@
     },
     "csharp": {
         "files": [
-            "csharp/ev3dev.Drivers.cs",
+            "csharp/Drivers.cs",
             "csharp/ev3dev.SystemProperties.cs",
             "csharp/ev3dev.PropertyValues.cs"
         ],

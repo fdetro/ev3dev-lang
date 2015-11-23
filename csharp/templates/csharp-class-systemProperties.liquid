@@ -20,7 +20,8 @@
            assign type  = 'string[]' %}{%
            assign getter  = 'Set' %}{%
            assign setter  = 'Set' %}{%
-        else if prop.type == 'string selector' %}{%
+        endif %}{%
+        if prop.type == 'string selector' %}{%
            assign type  = 'string' %}{%
            assign getter  = 'FromSet' %}{%
            assign setter  = 'String' %}{%
