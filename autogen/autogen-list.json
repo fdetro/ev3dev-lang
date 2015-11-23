@@ -10,7 +10,9 @@
     },
     "csharp": {
         "files": [
-            "csharp/ev3dev.Designer.cs"
+            "csharp/ev3dev.Drivers.cs",
+            "csharp/ev3dev.SystemProperties.cs",
+            "csharp/ev3dev.PropertyValues.cs"
         ],
         "templateDir": "csharp/templates/"
     },
