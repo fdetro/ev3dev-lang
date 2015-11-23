@@ -8,6 +8,12 @@
         ],
         "templateDir": "cpp/templates/"
     },
+    "csharp": {
+        "files": [
+            "csharp/ev3dev.Designer.cs"
+        ],
+        "templateDir": "csharp/templates/"
+    },
     "python": {
         "files": [
             "python/ev3dev/core.py",
