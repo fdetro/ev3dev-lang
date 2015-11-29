@@ -39,7 +39,7 @@
             if prop.writeAccess %}
             set 
             {
-                SetAttr{{setter}}("command", value);
+                SetAttr{{setter}}("{{prop.systemName}}", value);
             } {% endif %}
         } 
       {% endfor %}

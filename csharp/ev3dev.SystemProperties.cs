@@ -133,7 +133,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("duty_cycle_sp", value);
             } 
         } 
       
@@ -152,7 +152,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("encoder_polarity", value);
             } 
         } 
       
@@ -170,7 +170,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("polarity", value);
             } 
         } 
       
@@ -199,7 +199,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("position", value);
             } 
         } 
       
@@ -214,7 +214,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("hold_pid/Kp", value);
             } 
         } 
       
@@ -229,7 +229,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("hold_pid/Ki", value);
             } 
         } 
       
@@ -244,7 +244,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("hold_pid/Kd", value);
             } 
         } 
       
@@ -262,7 +262,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("position_sp", value);
             } 
         } 
       
@@ -292,7 +292,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("speed_sp", value);
             } 
         } 
       
@@ -311,7 +311,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("ramp_up_sp", value);
             } 
         } 
       
@@ -330,7 +330,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("ramp_down_sp", value);
             } 
         } 
       
@@ -349,7 +349,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("speed_regulation", value);
             } 
         } 
       
@@ -364,7 +364,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("speed_pid/Kp", value);
             } 
         } 
       
@@ -379,7 +379,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("speed_pid/Ki", value);
             } 
         } 
       
@@ -394,7 +394,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("speed_pid/Kd", value);
             } 
         } 
       
@@ -424,7 +424,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("stop_command", value);
             } 
         } 
       
@@ -461,7 +461,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("time_sp", value);
             } 
         } 
       
@@ -550,7 +550,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("duty_cycle_sp", value);
             } 
         } 
       
@@ -565,7 +565,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("polarity", value);
             } 
         } 
       
@@ -592,7 +592,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("ramp_down_sp", value);
             } 
         } 
       
@@ -608,7 +608,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("ramp_up_sp", value);
             } 
         } 
       
@@ -634,7 +634,7 @@ namespace ev3dev
         { 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("stop_command", value);
             } 
         } 
       
@@ -663,7 +663,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("time_sp", value);
             } 
         } 
       
@@ -714,7 +714,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("max_pulse_sp", value);
             } 
         } 
       
@@ -734,7 +734,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("mid_pulse_sp", value);
             } 
         } 
       
@@ -752,7 +752,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("min_pulse_sp", value);
             } 
         } 
       
@@ -770,7 +770,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("polarity", value);
             } 
         } 
       
@@ -799,7 +799,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("position_sp", value);
             } 
         } 
       
@@ -819,7 +819,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("rate_sp", value);
             } 
         } 
       
@@ -867,7 +867,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("brightness", value);
             } 
         } 
       
@@ -906,7 +906,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("trigger", value);
             } 
         } 
       
@@ -923,7 +923,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("delay_on", value);
             } 
         } 
       
@@ -940,7 +940,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("delay_off", value);
             } 
         } 
       
@@ -1033,7 +1033,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("mode", value);
             } 
         } 
       
@@ -1117,7 +1117,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrInt("command", value);
+                SetAttrInt("poll_ms", value);
             } 
         } 
       
@@ -1308,7 +1308,7 @@ namespace ev3dev
             } 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("mode", value);
             } 
         } 
       
@@ -1335,7 +1335,7 @@ namespace ev3dev
         { 
             set 
             {
-                SetAttrString("command", value);
+                SetAttrString("set_device", value);
             } 
         } 
       
