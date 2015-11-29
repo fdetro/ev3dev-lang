@@ -27,18 +27,18 @@ namespace ev3dev
 {
     public static class Inputs
     {
-        const string INPUT_1 = "in1"; //!< Sensor port 1
-        const string INPUT_2 = "in2"; //!< Sensor port 2
-        const string INPUT_3 = "in3"; //!< Sensor port 3
-        const string INPUT_4 = "in4"; //!< Sensor port 4
+        public const string INPUT_1 = "in1"; //!< Sensor port 1
+        public const string INPUT_2 = "in2"; //!< Sensor port 2
+        public const string INPUT_3 = "in3"; //!< Sensor port 3
+        public const string INPUT_4 = "in4"; //!< Sensor port 4
     }
 
     public static class Outputs
     {
-        const string OUTPUT_A = "outA"; //!< Motor port A
-        const string OUTPUT_B = "outB"; //!< Motor port B
-        const string OUTPUT_C = "outC"; //!< Motor port C
-        const string OUTPUT_D = "outD"; //!< Motor port D
+        public const string OUTPUT_A = "outA"; //!< Motor port A
+        public const string OUTPUT_B = "outB"; //!< Motor port B
+        public const string OUTPUT_C = "outC"; //!< Motor port C
+        public const string OUTPUT_D = "outD"; //!< Motor port D
     }
 
     public class Device
@@ -103,8 +103,7 @@ namespace ev3dev
         {
             get
             {
-                if (!Connected)
-                    throw new NotSupportedException("no device connected");
+                AssertConnected();
 
                 if (_deviceIndex < 0)
                 {
@@ -123,8 +122,7 @@ namespace ev3dev
 
         public int GetAttrInt(string name)
         {
-            if (!Connected)
-                throw new NotSupportedException("no device connected");
+            AssertConnected();
 
             using (StreamReader os = OpenStreamReader(name))
             {
@@ -134,8 +132,7 @@ namespace ev3dev
 
         public void SetAttrInt(string name, int value)
         {
-            if (!Connected)
-                throw new NotSupportedException("no device connected");
+            AssertConnected();
 
             using (StreamWriter os = OpenStreamWriter(name))
             {
@@ -145,20 +142,18 @@ namespace ev3dev
 
         public string GetAttrString(string name)
         {
-            if (!Connected)
-                throw new NotSupportedException("no device connected");
+            AssertConnected();
 
             using (StreamReader os = OpenStreamReader(name))
             {
-                return os.ReadToEnd();
+                return os.ReadToEnd().TrimEnd();
             }
         }
 
         public void SetAttrString(string name,
                               string value)
         {
-            if (!Connected)
-                throw new NotSupportedException("no device connected");
+            AssertConnected();
 
             using (StreamWriter os = OpenStreamWriter(name))
             {
@@ -168,8 +163,7 @@ namespace ev3dev
 
         public string GetAttrLine(string name)
         {
-            if (!Connected)
-                throw new NotSupportedException("no device connected");
+            AssertConnected();
 
             using (StreamReader os = OpenStreamReader(name))
             {
@@ -207,6 +201,12 @@ namespace ev3dev
         private StreamWriter OpenStreamWriter(string name)
         {
             return new StreamWriter(Path.Combine(_path, name));
+        }
+
+        private void AssertConnected()
+        {
+            if (!Connected)
+                throw new InvalidOperationException("no device connected");
         }
     }
 
@@ -365,7 +365,7 @@ namespace ev3dev
         public I2cSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -374,7 +374,7 @@ namespace ev3dev
         public ColorSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -383,7 +383,7 @@ namespace ev3dev
         public UltrasonicSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -392,7 +392,7 @@ namespace ev3dev
         public GyroSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -401,7 +401,7 @@ namespace ev3dev
         public InfraredSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -410,7 +410,7 @@ namespace ev3dev
         public SoundSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -419,7 +419,7 @@ namespace ev3dev
         public LightSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -428,7 +428,7 @@ namespace ev3dev
         public TouchSensor()
             : base(string.Empty)
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -451,7 +451,7 @@ namespace ev3dev
     {
         public LegoPort()
         {
-            throw new NotSupportedException();
+            throw new NotImplementedException();
         }
     }
 }
