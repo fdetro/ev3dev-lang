@@ -1,0 +1,15 @@
+{% for prop in currentClass.propertyValues %}{%
+    if prop.propertyName == 'Command' %}{%
+        assign className = currentClass.friendlyName | camel_case | capitalize %}{%
+        for value in prop.values %}{%
+            assign commandName = value.name | camel_case | capitalize %}{%
+            if commandName == 'float' %}{%
+                assign commandName = 'float_' %}{%
+            endif %}{%
+            for line in value.description %}
+    // {{ line }}{%
+            endfor%}
+    public void {{ commandName }}() { Command = "{{ value.name }}"; }
+{% endfor %}{%
+    endif %}{%
+endfor %}

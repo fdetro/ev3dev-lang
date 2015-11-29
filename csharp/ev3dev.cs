@@ -17,7 +17,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  */
- 
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +25,22 @@ using System.Linq;
 
 namespace ev3dev
 {
+    public static class Inputs
+    {
+        const string INPUT_1 = "in1"; //!< Sensor port 1
+        const string INPUT_2 = "in2"; //!< Sensor port 2
+        const string INPUT_3 = "in3"; //!< Sensor port 3
+        const string INPUT_4 = "in4"; //!< Sensor port 4
+    }
+
+    public static class Outputs
+    {
+        const string OUTPUT_A = "outA"; //!< Motor port A
+        const string OUTPUT_B = "outB"; //!< Motor port B
+        const string OUTPUT_C = "outC"; //!< Motor port C
+        const string OUTPUT_D = "outD"; //!< Motor port D
+    }
+
     public class Device
     {
         public static string SYS_ROOT = "/sys/";
@@ -58,8 +74,8 @@ namespace ev3dev
                         var matches = m.Value;
                         var strValue = GetAttrString(attribute);
 
-                        if (matches.Any() && !string.IsNullOrEmpty(matches.First()) 
-                            && !matches.Any(x=>x == strValue))
+                        if (matches.Any() && !string.IsNullOrEmpty(matches.First())
+                            && !matches.Any(x => x == strValue))
                         {
                             bMatch = false;
                             break;
@@ -174,7 +190,7 @@ namespace ev3dev
             pCur = bracketedValue.Substring(1, bracketedValue.Length - 2);
             return result;
         }
-        
+
         public string GetAttrFromSet(string name)
         {
             string[] result = GetAttrSet(name);
@@ -196,16 +212,16 @@ namespace ev3dev
 
     public partial class Motor
     {
-        public Motor(string port)
-        {
-            Connect(new Dictionary<string, string[]>
-                {
-                    { "port_name", new[] { port }
-                }
-            });
-        }
+        //protected Motor(string port)
+        //{
+        //    Connect(new Dictionary<string, string[]>
+        //        {
+        //            { "port_name", new[] { port }
+        //        }
+        //    });
+        //}
 
-        public Motor(string port, string motorType)
+        protected Motor(string port, string motorType)
         {
             Connect(new Dictionary<string, string[]>
             {
@@ -222,34 +238,42 @@ namespace ev3dev
             return Connect(classDir, pattern, match);
         }
     }
-    
+
     public partial class LargeMotor
-    { 
-        
-    } 
-    
+    {
+        public LargeMotor(string port)
+            : base(port, "lego-ev3-l-motor")
+        {
+
+        }
+    }
+
     public partial class MediumMotor
-    { 
-          
-    } 
-    
-    
+    {
+        public MediumMotor(string port)
+            : base(port, "lego-ev3-m-motor")
+        {
+
+        }
+    }
+
+
     public partial class DcMotor
-    {  
-    } 
-    
+    {
+    }
+
     public partial class ServoMotor
-    {  
-    } 
-    
+    {
+    }
+
     public partial class Led
-    {  
-    } 
-    
+    {
+    }
+
     public partial class Button
-    {  
-    } 
-    
+    {
+    }
+
     public partial class Sensor
     {
         public Sensor(string port)
@@ -277,8 +301,8 @@ namespace ev3dev
                 { "driver_name", driverNames }
             });
         }
-        
-                
+
+
         /// <summary>
         /// Returns the value or values measured by the sensor. Check `num_values` to
         /// see how many values there are. Values with index >= num_values will return
@@ -334,51 +358,100 @@ namespace ev3dev
                 return type;
             }
         }
-    } 
-    
-    public partial class I2cSensor
-    { 
     }
-        
+
+    public partial class I2cSensor
+    {
+        public I2cSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class ColorSensor
-    { 
-        
-    } 
-    
+    {
+        public ColorSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class UltrasonicSensor
-    { 
-        
-    } 
-    
+    {
+        public UltrasonicSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class GyroSensor
-    { 
-        
-    } 
-    
+    {
+        public GyroSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class InfraredSensor
-    { 
-         
-    } 
-    
+    {
+        public InfraredSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class SoundSensor
-    { 
-        
-    } 
-    
+    {
+        public SoundSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class LightSensor
-    { 
-        
-    } 
-    
+    {
+        public LightSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class TouchSensor
     {
-    } 
-    
+        public TouchSensor()
+            : base(string.Empty)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
     public partial class PowerSupply
-    {  
-    } 
-    
+    {
+        public PowerSupply(string name)
+        {
+            string strClassDir = Path.Combine(SYS_ROOT, "class", "power_supply");
+
+            if (string.IsNullOrEmpty(name))
+                name = "legoev3-battery";
+
+            Connect(strClassDir,
+                name,
+                new Dictionary<string, string[]>());
+        }
+    }
+
     public partial class LegoPort
-    {  
-    } 
+    {
+        public LegoPort()
+        {
+            throw new NotSupportedException();
+        }
+    }
 }

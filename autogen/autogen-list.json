@@ -11,6 +11,7 @@
     "csharp": {
         "files": [
             "csharp/Drivers.cs",
+            "csharp/ev3dev.MotorCommands.cs",
             "csharp/ev3dev.SystemProperties.cs",
             "csharp/ev3dev.PropertyValues.cs"
         ],
