@@ -31,34 +31,48 @@ namespace ev3dev
     {
 //~autogen csharp-motor-commands classes.motor>currentClass
 
-    // Run the motor until another command is sent.
+    /// <summary> 
+    /// Run the motor until another command is sent.
+    /// </summary>        
     public void RunForever() { Command = "run-forever"; }
 
-    // Run to an absolute position specified by `position_sp` and then
-    // stop using the command specified in `stop_command`.
+    /// <summary> 
+    /// Run to an absolute position specified by `position_sp` and then
+    /// stop using the command specified in `stop_command`.
+    /// </summary>        
     public void RunToAbsPos() { Command = "run-to-abs-pos"; }
 
-    // Run to a position relative to the current `position` value.
-    // The new position will be current `position` + `position_sp`.
-    // When the new position is reached, the motor will stop using
-    // the command specified by `stop_command`.
+    /// <summary> 
+    /// Run to a position relative to the current `position` value.
+    /// The new position will be current `position` + `position_sp`.
+    /// When the new position is reached, the motor will stop using
+    /// the command specified by `stop_command`.
+    /// </summary>        
     public void RunToRelPos() { Command = "run-to-rel-pos"; }
 
-    // Run the motor for the amount of time specified in `time_sp`
-    // and then stop the motor using the command specified by `stop_command`.
+    /// <summary> 
+    /// Run the motor for the amount of time specified in `time_sp`
+    /// and then stop the motor using the command specified by `stop_command`.
+    /// </summary>        
     public void RunTimed() { Command = "run-timed"; }
 
-    // Run the motor at the duty cycle specified by `duty_cycle_sp`.
-    // Unlike other run commands, changing `duty_cycle_sp` while running *will*
-    // take effect immediately.
+    /// <summary> 
+    /// Run the motor at the duty cycle specified by `duty_cycle_sp`.
+    /// Unlike other run commands, changing `duty_cycle_sp` while running *will*
+    /// take effect immediately.
+    /// </summary>        
     public void RunDirect() { Command = "run-direct"; }
 
-    // Stop any of the run commands before they are complete using the
-    // command specified by `stop_command`.
+    /// <summary> 
+    /// Stop any of the run commands before they are complete using the
+    /// command specified by `stop_command`.
+    /// </summary>        
     public void Stop() { Command = "stop"; }
 
-    // Reset all of the motor parameter attributes to their default value.
-    // This will also have the effect of stopping the motor.
+    /// <summary> 
+    /// Reset all of the motor parameter attributes to their default value.
+    /// This will also have the effect of stopping the motor.
+    /// </summary>        
     public void Reset() { Command = "reset"; }
 
 
