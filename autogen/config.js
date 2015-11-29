@@ -24,7 +24,9 @@ exports.extraLiquidFilters = {
             });
         }
         
-        if(typeof input == 'string')
+        if(!input)
+            return "undefined";
+        else if(typeof input == 'string')
             return camelCaseSingle(input);
         else
             return input.map(camelCaseSingle);
