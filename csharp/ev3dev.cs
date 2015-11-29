@@ -257,21 +257,36 @@ namespace ev3dev
         }
     }
 
-
     public partial class DcMotor
     {
+        public DcMotor()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class ServoMotor
     {
+        public ServoMotor()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class Led
     {
+        public Led()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class Button
     {
+        public Button()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public partial class Sensor
