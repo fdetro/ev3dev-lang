@@ -377,17 +377,21 @@ namespace ev3dev
 
     public partial class I2cSensor
     {
-        public I2cSensor()
-            : base(string.Empty)
+        public I2cSensor(string port)
+            : base(port, new[] { Drivers.NxtI2cSensor })
         {
-            throw new NotImplementedException();
         }
     }
 
     public partial class ColorSensor
     {
-        public ColorSensor()
-            : base(string.Empty)
+        public ColorSensor(string port)
+            : base(port, new[] { Drivers.LegoEv3Color })
+        {
+        }
+        
+        public ColorSensor(string port, string address)
+            : base(port, new[] { Drivers.LegoEv3Color })
         {
             throw new NotImplementedException();
         }
@@ -396,18 +400,16 @@ namespace ev3dev
     public partial class UltrasonicSensor
     {
         public UltrasonicSensor()
-            : base(string.Empty)
+            : base(port, new [] { Drivers.LegoEv3Us, Drivers.LegoNxtUs })
         {
-            throw new NotImplementedException();
         }
     }
 
     public partial class GyroSensor
     {
         public GyroSensor()
-            : base(string.Empty)
+            : base(port, new[] { Drivers.LegoEv3Gyro })
         {
-            throw new NotImplementedException();
         }
     }
 
@@ -432,18 +434,16 @@ namespace ev3dev
     public partial class LightSensor
     {
         public LightSensor()
-            : base(string.Empty)
+            : base(port, new[] { Drivers.LegoNxtLight })
         {
-            throw new NotImplementedException();
         }
     }
 
     public partial class TouchSensor
     {
-        public TouchSensor()
-            : base(string.Empty)
+        public TouchSensor(string port)
+            : base(port, new [] { Drivers.LegoEv3Touch, Drivers.LegoNxtTouch })
         {
-            throw new NotImplementedException();
         }
     }
 
