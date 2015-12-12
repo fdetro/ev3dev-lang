@@ -54,7 +54,6 @@
                     RightMotor = MotorDrive.Stop;
                     LeftMotor = MotorDrive.Stop;
                     break;
-                    break;
             }
         }
 

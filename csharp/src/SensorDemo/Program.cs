@@ -14,7 +14,6 @@ namespace SensorDemo
     {
         public void Main(string[] args)
         {
-            Device.SYS_ROOT = "c:/temp/ev3-sensors";
             Console.WriteLine("Reading sensor data");
             Sensor s = new Sensor(string.Empty);
 
