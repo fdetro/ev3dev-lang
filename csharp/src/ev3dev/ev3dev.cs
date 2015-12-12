@@ -413,10 +413,10 @@ namespace ev3dev
 
     public partial class InfraredSensor
     {
-        public InfraredSensor()
-            : base(string.Empty)
+        public InfraredSensor(string port)
+            : base(port, new[] { Drivers.LegoEv3Ir })
         {
-            throw new NotImplementedException();
+
         }
     }
 

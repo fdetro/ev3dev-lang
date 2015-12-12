@@ -10,10 +10,11 @@
     },
     "csharp": {
         "files": [
-            "csharp/Drivers.cs",
-            "csharp/ev3dev.MotorCommands.cs",
-            "csharp/ev3dev.SystemProperties.cs",
-            "csharp/ev3dev.PropertyValues.cs"
+            "csharp/src/ev3dev/Drivers.cs",
+            "csharp/src/ev3dev/ev3dev.MotorCommands.cs",
+            "csharp/src/ev3dev/ev3dev.InfraredSensorModes.cs",
+            "csharp/src/ev3dev/ev3dev.SystemProperties.cs",
+            "csharp/src/ev3dev/ev3dev.PropertyValues.cs"
         ],
         "templateDir": "csharp/templates/"
     },
