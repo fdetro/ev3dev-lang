@@ -31,6 +31,13 @@
         ],
         "templateDir": "autogen/templates/"
     },
+    "java": {
+        "files": [
+            "java/library/src/main/java/ev3dev/SpecificationVersion.java",
+            "java/library/src/main/java/ev3dev/EV3DevConstants.java"
+        ],
+        "templateDir": "java/templates/"
+    },
     "docs": {
         "files": [
             "wrapper-specification.md"
