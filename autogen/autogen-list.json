@@ -6,7 +6,7 @@
             "cpp/ev3dev-lang-test.cpp",
             "cpp/ev3dev-lang-demo.cpp"
         ],
-        "templateDir": "autogen/templates/"
+        "templateDir": "cpp/templates/"
     },
     "python": {
         "files": [
@@ -20,16 +20,17 @@
     "js": {
         "files": [
             "js/extras.ts",
-            "js/motor.ts",
-            "js/sensor.ts"
+            "js/motors.ts",
+            "js/sensors.ts",
+            "js/index.ts"
         ],
-        "templateDir": "autogen/templates/"
+        "templateDir": "js/templates/"
     },
     "lua": {
         "files": [
-            "lua/ev3dev.lua"
+            "lua/core.lua"
         ],
-        "templateDir": "autogen/templates/"
+        "templateDir": "lua/templates/"
     },
     "docs": {
         "files": [
