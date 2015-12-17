@@ -27,9 +27,9 @@
     },
     "lua": {
         "files": [
-            "lua/ev3dev.lua"
+            "lua/core.lua"
         ],
-        "templateDir": "autogen/templates/"
+        "templateDir": "lua/templates/"
     },
     "docs": {
         "files": [
