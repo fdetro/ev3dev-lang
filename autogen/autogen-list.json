@@ -25,12 +25,6 @@
         ],
         "templateDir": "js/templates/"
     },
-    "lua": {
-        "files": [
-            "lua/core.lua"
-        ],
-        "templateDir": "lua/templates/"
-    },
     "docs": {
         "files": [
             "wrapper-specification.md"
