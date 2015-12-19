@@ -21,16 +21,9 @@
         "files": [
             "js/extras.ts",
             "js/motors.ts",
-            "js/sensors.ts",
-            "js/index.ts"
+            "js/sensors.ts"
         ],
         "templateDir": "js/templates/"
-    },
-    "lua": {
-        "files": [
-            "lua/ev3dev.lua"
-        ],
-        "templateDir": "autogen/templates/"
     },
     "docs": {
         "files": [

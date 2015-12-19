@@ -15,18 +15,11 @@ exports.autogenFenceComments = {
 }
 
 exports.extraLiquidFilters = {
-    //camel-cases the input string. If the parameter is an array, applies to all items.
+    //camel-cases the input string
     camel_case: function (input) {
-        function camelCaseSingle(input) {
-            return String(input).toLowerCase().replace(/[-|\s](.)/g, function (match, group1) {
-                return group1.toUpperCase();
-            });
-        }
-        
-        if(typeof input == 'string')
-            return camelCaseSingle(input);
-        else
-            return input.map(camelCaseSingle);
+        return String(input).toLowerCase().replace(/[-|\s](.)/g, function (match, group1) {
+            return group1.toUpperCase();
+        });
     },
     //replaces sections of whitespace with underscores
     underscore_spaces: function (input) {
@@ -52,19 +45,19 @@ exports.extraLiquidFilters = {
     eq: function (a, b) {
         return a == b;
     },
-    prepend_all: function (array, prependStr) {
-        return array.map(function(item) {
-           return  prependStr + item;
+    //filters the given collection using the provided condition statement, which is
+    // evaluated as a JavaScript string (it should return a boolean)
+    filter: function(collection, condition) {
+        return [].filter(function(item, itemIndex, wholeArray) {
+            return eval(condition);
         });
     },
-    append_all: function (array, appendStr) {
-        return array.map(function(item) {
-           return  item + appendStr;
-        });
+    json_stringify: function(value) {
+        return JSON.stringify(value);
     },
-    select: function(array, property) {
-        return array.map(function(item) {
-           return utils.getProp(item, property); 
-        });
+    //evaluates expression as JavaScript in the given context
+    eval: function (expression, context) {
+        var vm = require('vm');
+        return vm.runInNewContext(expression, context || {});
     }
 };
