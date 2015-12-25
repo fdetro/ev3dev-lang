@@ -7,5 +7,6 @@ We currently have libraries for the following languages here:
 - C++
 - Node.JS
 - Python
+- .NET (C#)
 
 Each binding complies with our universal language binding specification, which also serves as high-level documentation for our wrappers.

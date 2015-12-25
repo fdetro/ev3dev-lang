@@ -5,3 +5,6 @@
 	path = python
 	url = https://github.com/rhempel/ev3dev-lang-python
 	branch = master
+[submodule "csharp"]
+	path = csharp
+	url = https://github.com/pgrudzien12/ev3dev-lang-csharp

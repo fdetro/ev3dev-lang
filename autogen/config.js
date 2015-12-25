@@ -5,6 +5,7 @@ var cStyleAutogenEnd = "//~autogen";
 
 exports.autogenFenceComments = {
     '.ts': { start: cStyleAutogenStart, end: cStyleAutogenEnd },
+    '.cs': { start: cStyleAutogenStart, end: cStyleAutogenEnd },
     '.vala': { start: cStyleAutogenStart, end: cStyleAutogenEnd },
     '.cpp': { start: cStyleAutogenStart, end: cStyleAutogenEnd },
     '.h': { start: cStyleAutogenStart, end: cStyleAutogenEnd },
@@ -23,7 +24,9 @@ exports.extraLiquidFilters = {
         });
         }
         
-        if(typeof input == 'string')
+        if(!input)
+            return "undefined";
+        else if(typeof input == 'string')
             return camelCaseSingle(input);
         else
             return input.map(camelCaseSingle);
